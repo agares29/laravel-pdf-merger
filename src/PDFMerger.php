@@ -79,8 +79,10 @@ class PDFMerger {
      *
      * @return string
      */
-    public function download(){
-      return $this->fpdi->Output($this->fileName, 'D');
+    public function download($fileName = null){
+
+      $fileName = $fileName ?? $this->fileName;
+      return $this->fpdi->Output($fileName, 'D');
     }
     /**
      * Save the merged PDF content to the filesystem
